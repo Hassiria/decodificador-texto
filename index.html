@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">a</span>
+            </div>
+        </header>
+        <main>
+            <div class="input-section">
+                <h1>Digite seu texto</h1>
+                <textarea id="text-input" placeholder="Digite seu texto aqui"></textarea>
+                <div class="buttons">
+                    <button id="encrypt-btn">Criptografar</button>
+                    <button id="decrypt-btn">Descriptografar</button>
+                </div>
+            </div>
+            <div class="message-section">
+                <div class="message-placeholder">
+                    <h2>Nenhuma mensagem encontrada</h2>
+                    <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Apenas letras minúsculas e sem acento.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Função para criptografar o texto
+        function criptografarTexto(texto) {
+            let textoCriptografado = '';
+            for (let i = 0; i < texto.length; i++) {
+                let charCode = texto.charCodeAt(i);
+                textoCriptografado += String.fromCharCode(charCode + 3);
+            }
+            return textoCriptografado;
+        }
+
+        // Função para descriptografar o texto
+        function descriptografarTexto(texto) {
+            let textoDescriptografado = '';
+            for (let i = 0; i < texto.length; i++) {
+                let charCode = texto.charCodeAt(i);
+                textoDescriptografado += String.fromCharCode(charCode - 3);
+            }
+            return textoDescriptografado;
+        }
+
+        // Função para capturar o texto e mostrar o resultado
+        function processarTexto(acao) {
+            const textInput = document.getElementById('text-input').value;
+            const messageSection = document.querySelector('.message-placeholder');
+
+            let resultado;
+            if (acao === 'criptografar') {
+                resultado = criptografarTexto(textInput);
+            } else if (acao === 'descriptografar') {
+                resultado = descriptografarTexto(textInput);
+            }
+
+            messageSection.innerHTML = `
+                <h2>Resultado:</h2>
+                <p>${resultado}</p>
+            `;
+        }
+
+        // Adiciona os eventos aos botões
+        document.getElementById('encrypt-btn').addEventListener('click', function() {
+            processarTexto('criptografar');
+        });
+
+        document.getElementById('decrypt-btn').addEventListener('click', function() {
+            processarTexto('descriptografar');
+        });
+    </script>
+</body>
+</html>

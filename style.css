@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4ece4;
+    color: #3e2723;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff7f0;
+    width: 70%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #e0c3a7;
+    padding: 20px;
+    text-align: left;
+}
+
+.logo .icon {
+    font-size: 32px;
+    font-weight: bold;
+    color: #5d4037;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.input-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-section h1 {
+    font-size: 24px;
+    color: #5d4037;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccb29b;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    color: #5d4037;
+    resize: none;
+    background-color: #fffaf0;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#encrypt-btn {
+    background-color: #6d4c41;
+    color: white;
+}
+
+#decrypt-btn {
+    background-color: #ccb29b;
+    color: #5d4037;
+}
+
+.message-section {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0c3a7;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.message-placeholder {
+    text-align: center;
+}
+
+.message-placeholder h2 {
+    font-size: 20px;
+    color: #5d4037;
+}
+
+.message-placeholder p {
+    font-size: 16px;
+    color: #8d6e63;
+}
+
+footer {
+    background-color: #e0c3a7;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #8d6e63;
+}
